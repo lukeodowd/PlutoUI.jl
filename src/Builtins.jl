@@ -108,6 +108,8 @@ closest(range::AbstractVector, x)
 Return the element of `range` that is closest to `x`.
 """
 function closest(range::AbstractRange, x::Real)
+	if isnan(x); return x; end;
+
 	rmin = minimum(range)
 	rmax = maximum(range)
 
